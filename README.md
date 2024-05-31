@@ -24,8 +24,23 @@ Goose Hub - де ваші емоції зберігаються в кожном�
     - Історія переглядів;
     - Історія коментарів;
     - Списки улюблене, переглянуті, у планах, кинуто і можливість створювати свої списки;
-    - Можливість ділитися списками;
 - Розклад виходу серій;
 - Панель адміністратора:
     - Завантаження та автоматична обробка в 720p та 480p фільмів, нових серій, тощо;
     - Можливість редагувати інформацію про фільми;
+
+## Архітектура
+
+Сервіс побудовано за мікросервісною архітектурою.
+
+![Архітектура](assets/image.png)
+
+## Репозиторії
+
+- [Frontend](https://github.com/Navatusein/Goose-Hub-Frontend)
+- [Authentication API](https://github.com/Navatusein/Goose-Hub-Authentication-API)
+- [Movie API](https://github.com/Navatusein/Goose-Hub-Movie-API)
+- [User Profile API](https://github.com/Navatusein/Goose-Hub-User-Profile-API)
+- [Comment API](https://github.com/Navatusein/Goose-Hub-Comment-API)
+- [Upload API](https://github.com/Navatusein/Goose-Hub-Upload-API)
+- [Video Processing Service](https://github.com/Navatusein/Goose-Hub-Video-Processing-Service)

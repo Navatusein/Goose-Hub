@@ -1,0 +1,56 @@
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://frontend:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ^~ /api/authentication-api {
+        rewrite ^/api/authentication-api(.*)$ $1 break;
+        proxy_pass http://authentication-api:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ^~ /api/user-profile-api {
+        rewrite ^/api/user-profile-api(.*)$ $1 break;
+        proxy_pass http://user-profile-api:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ^~ /api/movie-api {
+        rewrite ^/api/movie-api(.*)$ $1 break;
+        proxy_pass http://movie-api:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ^~ /api/comment-api {
+        rewrite ^/api/comment-api(.*)$ $1 break;
+        proxy_pass http://comment-api:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location ^~ /api/upload-api {
+        rewrite ^/api/upload-api(.*)$ $1 break;
+        proxy_pass http://upload-api:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
